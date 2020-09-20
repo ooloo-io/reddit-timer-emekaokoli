@@ -1,0 +1,12 @@
+.app {
+  text-align: center;
+  justify-content: center;
+    vertical-align: middle;
+    top: 50rem;
+
+}
+input{
+  width: 50vmin;
+  height: 3vmin;
+  
+}
