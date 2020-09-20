@@ -6,7 +6,6 @@ export default function SearchScreen() {
 
   const handleInput = (e) => {
     const { name, value } = e.target;
-    console.log(name);
     setInput(() => ({ [name]: value }));
     e.preventDefault();
   };
