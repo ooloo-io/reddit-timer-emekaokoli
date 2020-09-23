@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checks header component renders correctly 1`] = `
+<header
+  className="sc-gtssRu ixWDGw"
+>
+  <a
+    aria-current="page"
+    className="sc-jSFkmK fFLOBj active"
+    href="/"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    <img
+      alt="elements-logo.svg"
+      className="sc-eCApGN kjxHVm"
+      src="elements-logo.svg"
+    />
+  </a>
+  <nav
+    className="sc-bdnylx lnmxJh"
+  >
+    <ul
+      className="sc-dlnjPT hTAPrA"
+    >
+      <li
+        className="sc-hKFyIo jpiKoV"
+      >
+        <input
+          className="sc-gKAblj kRZbuc"
+          placeholder="Search"
+        />
+      </li>
+      <li
+        className="sc-hKFyIo jpiKoV"
+      >
+        <a
+          aria-current={null}
+          className="sc-jSFkmK fFLOBj"
+          href="/how-it-works"
+          onClick={[Function]}
+        >
+          How It Works
+        </a>
+      </li>
+      <li
+        className="sc-hKFyIo jpiKoV"
+      >
+        <a
+          aria-current={null}
+          className="sc-jSFkmK fFLOBj"
+          href="/about"
+          onClick={[Function]}
+        >
+          About
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+`;

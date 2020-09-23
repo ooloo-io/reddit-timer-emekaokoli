@@ -1,26 +1,39 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import styled from 'styled-components';
 import './App.css';
-import About from './components/about/About';
-import HomeScreen from './components/Home/Home';
-import HowItWorks from './components/howItWorks/how-it-works';
-import Nav from './components/nav/Nav';
-import SearchScreen from './components/search/Search';
+import About from './components/About';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Home from './components/Home';
+import HowItWorks from './components/how-it-works';
 
 function App() {
   return (
-    <>
+    <Wrapper>
       <Router>
-        <Nav />
-        <Switch>
-          <Route exact path="/" component={HomeScreen} />
-          <Route exact path="/search" component={SearchScreen} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/how-it-works" component={HowItWorks} />
-        </Switch>
+        <Header />
+        <Div>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" exact component={About} />
+            <Route path="/how-it-works" exact component={HowItWorks} />
+          </Switch>
+        </Div>
+        <Footer />
       </Router>
-    </>
+    </Wrapper>
   );
 }
+const Wrapper = styled.div`
+  // width: 80vmax;
+  // margin: 0 10rem 0 10rem;
+  text-align: left;
+  margin: 0 auto;
+  // height:100vh;
+`;
+const Div = styled.div`
+  height: 100vh;
+`;
 
 export default App;
