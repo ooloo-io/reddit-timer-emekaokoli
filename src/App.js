@@ -7,6 +7,7 @@ import About from './components/About';
 import Header from './components/Header';
 import Home from './components/Home';
 import HowItWorks from './components/how-it-works';
+import Search from './components/Search';
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
         <Div>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/about" exact component={About} />
+            <Route path="/search" exact component={Search} />
             <Route path="/how-it-works" exact component={HowItWorks} />
+            <Route path="/about" exact component={About} />
           </Switch>
         </Div>
         {/* <Footer /> */}

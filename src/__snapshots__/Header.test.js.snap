@@ -25,14 +25,20 @@ exports[`Checks header component renders correctly 1`] = `
     >
       <li
         className="sc-hKFyIo jpiKoV"
+        data-testid="search"
       >
-        <input
-          className="sc-gKAblj kRZbuc"
-          placeholder="Search"
-        />
+        <a
+          aria-current={null}
+          className="sc-jSFkmK fFLOBj"
+          href="/search"
+          onClick={[Function]}
+        >
+          Search
+        </a>
       </li>
       <li
         className="sc-hKFyIo jpiKoV"
+        data-testid="howitworks"
       >
         <a
           aria-current={null}
@@ -45,6 +51,7 @@ exports[`Checks header component renders correctly 1`] = `
       </li>
       <li
         className="sc-hKFyIo jpiKoV"
+        data-testid="about"
       >
         <a
           aria-current={null}

@@ -12,15 +12,13 @@ export default function Nav() {
         </Links>
         <NavTag>
           <UlTag>
-            <LiTag>
-              <SearchInput placeholder="Search" />
+            <LiTag data-testid="search">
+              <Links to="/search">Search</Links>
             </LiTag>
-            <LiTag>
-              <Links to="/how-it-works" activeClassName="selected">
-                How It Works
-              </Links>
+            <LiTag data-testid="howitworks">
+              <Links to="/how-it-works">How It Works</Links>
             </LiTag>
-            <LiTag>
+            <LiTag data-testid="about">
               <Links to="/about">About</Links>
             </LiTag>
           </UlTag>
@@ -71,8 +69,4 @@ const Links = styled(NavLink)`
     -o-transition: all 0.3s ease 0s;
     color: green;
   }
-`;
-const SearchInput = styled.input`
-type='text';
-border:0;
 `;
