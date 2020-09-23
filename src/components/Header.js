@@ -13,7 +13,7 @@ export default function Nav() {
         <NavTag>
           <UlTag>
             <LiTag>
-              <Input placeholder="Search" />
+              <SearchInput placeholder="Search" />
             </LiTag>
             <LiTag>
               <Links to="/how-it-works" activeClassName="selected">
@@ -72,7 +72,7 @@ const Links = styled(NavLink)`
     color: green;
   }
 `;
-const Input = styled.input`
+const SearchInput = styled.input`
 type='text';
 border:0;
 `;
