@@ -56,7 +56,6 @@ const Logo = styled.img`
   margin: 0.8rem;
   cursor: pointer;
 `;
-
 const Links = styled(NavLink)`
   text-decoration: none;
   transition: all 0.3s ease 0s;

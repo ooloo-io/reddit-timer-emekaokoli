@@ -6,13 +6,11 @@ export default function HomeScreen() {
     <>
       <Div>
         {/* <H1></H1> */}
+        home page
       </Div>
     </>
   );
 }
-const H1 = styled.h1`
-align-content:center
-`;
 
 const Div = styled.div`
 height: 100vh;

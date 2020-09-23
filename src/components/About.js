@@ -15,7 +15,6 @@ export default function SearchScreen() {
   );
 }
 const Paragraph = styled.p`
-
 `;
 const Wrapper = styled.div`
   // width: 70vmax;
