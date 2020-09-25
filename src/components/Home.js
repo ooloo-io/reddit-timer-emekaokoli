@@ -6,7 +6,7 @@ export default function HomeScreen() {
     <>
       <Div>
         <Section id="about">About</Section>
-        <Section id="How-it-works">How it works</Section>
+        <Section id="how-it-works">How it works</Section>
       </Div>
     </>
   );

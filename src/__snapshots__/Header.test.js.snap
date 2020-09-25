@@ -42,7 +42,7 @@ exports[`Checks header component renders correctly 1`] = `
       >
         <a
           className="sc-jSFkmK fFLOBj"
-          href="/#How-it-works"
+          href="/#how-it-works"
           onClick={[Function]}
         >
           How it works

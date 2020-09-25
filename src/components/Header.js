@@ -17,7 +17,7 @@ export default function Nav() {
               <SearchLink to="/search/javascript">Search</SearchLink>
             </LiTag>
             <LiTag data-testid="howitworks">
-              <Links smooth to="/#How-it-works">
+              <Links smooth to="/#how-it-works">
                 How it works
               </Links>
             </LiTag>
