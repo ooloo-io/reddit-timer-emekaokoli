@@ -7,7 +7,10 @@ export default function HomeScreen() {
       <Div>
         home page
         <Section>
-          <a href="#about">ABOUT</a>
+          <a href="#about">About</a>
+        </Section>
+        <Section>
+          <a href="#how-it-works">How it works</a>
         </Section>
       </Div>
     </>
