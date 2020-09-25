@@ -5,13 +5,8 @@ export default function HomeScreen() {
   return (
     <>
       <Div>
-        home page
-        <Section>
-          <a href="#about">About</a>
-        </Section>
-        <Section>
-          <a href="#how-it-works">How it works</a>
-        </Section>
+        <Section id="about">About</Section>
+        <Section id="how-it-works">How it works</Section>
       </Div>
     </>
   );

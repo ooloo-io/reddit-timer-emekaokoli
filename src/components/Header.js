@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import styled from 'styled-components';
 import GetLogo from './images/elements-logo.svg';
 
@@ -7,19 +8,21 @@ export default function Nav() {
   return (
     <>
       <HeadTag>
-        <Links to="/">
+        <SearchLink to="/">
           <Logo src={GetLogo} alt={GetLogo} />
-        </Links>
+        </SearchLink>
         <NavTag>
           <UlTag>
             <LiTag data-testid="search">
-              <Links to="/#search">Search</Links>
+              <SearchLink to="/search">Search</SearchLink>
             </LiTag>
             <LiTag data-testid="howitworks">
-              <Links to="/#how-it-works">How It Works</Links>
+              <Links smooth to="/#how-it-works">
+                How It Works
+              </Links>
             </LiTag>
             <LiTag data-testid="about">
-              <Links to="/#about">About</Links>
+              <Links smooth to="/#about">About</Links>
             </LiTag>
           </UlTag>
         </NavTag>
@@ -54,7 +57,7 @@ const Logo = styled.img`
   margin: 0.8rem;
   cursor: pointer;
 `;
-const Links = styled(NavLink)`
+const Links = styled(Link)`
   text-decoration: none;
   transition: all 0.3s ease 0s;
   -webkit-transition: all 0.3s ease 0s;
@@ -69,4 +72,7 @@ const Links = styled(NavLink)`
     -o-transition: all 0.3s ease 0s;
     color: green;
   }
+`;
+const SearchLink = styled(NavLink)`
+  text-decoration: none;
 `;
