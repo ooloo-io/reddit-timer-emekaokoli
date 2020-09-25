@@ -28,10 +28,11 @@ exports[`Checks header component renders correctly 1`] = `
         data-testid="search"
       >
         <a
-          aria-current={null}
-          className="sc-jSFkmK fFLOBj"
-          href="/search"
+          aria-current="page"
+          className="sc-jSFkmK fFLOBj active"
+          href="/#search"
           onClick={[Function]}
+          style={Object {}}
         >
           Search
         </a>
@@ -41,10 +42,11 @@ exports[`Checks header component renders correctly 1`] = `
         data-testid="howitworks"
       >
         <a
-          aria-current={null}
-          className="sc-jSFkmK fFLOBj"
-          href="/how-it-works"
+          aria-current="page"
+          className="sc-jSFkmK fFLOBj active"
+          href="/#how-it-works"
           onClick={[Function]}
+          style={Object {}}
         >
           How It Works
         </a>
@@ -54,10 +56,11 @@ exports[`Checks header component renders correctly 1`] = `
         data-testid="about"
       >
         <a
-          aria-current={null}
-          className="sc-jSFkmK fFLOBj"
-          href="/about"
+          aria-current="page"
+          className="sc-jSFkmK fFLOBj active"
+          href="/#about"
           onClick={[Function]}
+          style={Object {}}
         >
           About
         </a>

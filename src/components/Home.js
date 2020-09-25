@@ -5,8 +5,10 @@ export default function HomeScreen() {
   return (
     <>
       <Div>
-        {/* <H1></H1> */}
         home page
+        <Section>
+          <a href="#about">ABOUT</a>
+        </Section>
       </Div>
     </>
   );
@@ -15,3 +17,4 @@ export default function HomeScreen() {
 const Div = styled.div`
 height: 100vh;
 `;
+const Section = styled.section``;

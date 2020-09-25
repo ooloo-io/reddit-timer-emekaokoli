@@ -13,13 +13,13 @@ export default function Nav() {
         <NavTag>
           <UlTag>
             <LiTag data-testid="search">
-              <Links to="/search">Search</Links>
+              <Links to="/#search">Search</Links>
             </LiTag>
             <LiTag data-testid="howitworks">
-              <Links to="/how-it-works">How It Works</Links>
+              <Links to="/#how-it-works">How It Works</Links>
             </LiTag>
             <LiTag data-testid="about">
-              <Links to="/about">About</Links>
+              <Links to="/#about">About</Links>
             </LiTag>
           </UlTag>
         </NavTag>
