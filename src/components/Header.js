@@ -14,15 +14,17 @@ export default function Nav() {
         <NavTag>
           <UlTag>
             <LiTag data-testid="search">
-              <SearchLink to="/search">Search</SearchLink>
+              <SearchLink to="/search/javascript">Search</SearchLink>
             </LiTag>
             <LiTag data-testid="howitworks">
-              <Links smooth to="/#how-it-works">
-                How It Works
+              <Links smooth to="/#How-it-works">
+                How it works
               </Links>
             </LiTag>
             <LiTag data-testid="about">
-              <Links smooth to="/#about">About</Links>
+              <Links smooth to="/#about">
+                About
+              </Links>
             </LiTag>
           </UlTag>
         </NavTag>

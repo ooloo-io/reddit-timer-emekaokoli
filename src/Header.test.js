@@ -20,7 +20,7 @@ it('containts how it works in the link', async () => {
       <Header />
     </Router>,
   );
-  expect(getByTestId('howitworks')).toHaveTextContent('How It Works');
+  expect(getByTestId('howitworks')).toHaveTextContent('How it works');
 });
 it('containts about link', async () => {
   const { getByTestId } = render(

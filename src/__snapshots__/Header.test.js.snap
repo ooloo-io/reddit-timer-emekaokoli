@@ -30,7 +30,7 @@ exports[`Checks header component renders correctly 1`] = `
         <a
           aria-current={null}
           className="sc-gKAblj cxXkRZ"
-          href="/search"
+          href="/search/javascript"
           onClick={[Function]}
         >
           Search
@@ -42,10 +42,10 @@ exports[`Checks header component renders correctly 1`] = `
       >
         <a
           className="sc-jSFkmK fFLOBj"
-          href="/#how-it-works"
+          href="/#How-it-works"
           onClick={[Function]}
         >
-          How It Works
+          How it works
         </a>
       </li>
       <li
