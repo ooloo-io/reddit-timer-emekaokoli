@@ -8,13 +8,13 @@ export default function Nav() {
   return (
     <>
       <HeadTag>
-        <SearchLink to="/">
+        <Navlink to="/">
           <Logo src={GetLogo} alt={GetLogo} />
-        </SearchLink>
+        </Navlink>
         <NavTag>
           <UlTag>
             <LiTag data-testid="search">
-              <SearchLink to="/search/javascript">Search</SearchLink>
+              <Navlink to="/search/javascript">Search</Navlink>
             </LiTag>
             <LiTag data-testid="howitworks">
               <Links smooth to="/#how-it-works">
@@ -75,6 +75,6 @@ const Links = styled(Link)`
     color: green;
   }
 `;
-const SearchLink = styled(NavLink)`
+const Navlink = styled(NavLink)`
   text-decoration: none;
 `;

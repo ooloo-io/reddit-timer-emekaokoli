@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import './App.css';
 import About from './components/About';
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
 import HowItWorks from './components/how-it-works';
@@ -22,7 +22,7 @@ function App() {
             <Route path="/about" exact component={About} />
           </Switch>
         </Div>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </Wrapper>
   );
