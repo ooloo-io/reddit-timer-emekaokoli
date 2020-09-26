@@ -7,14 +7,14 @@ export default function Footer() {
   return (
     <Wrapper>
       <ParentDiv>
-        <Ooloo
+        <Link
           to={{
             pathname: 'https://ooloo.io/employers',
           }}
           target="_blank"
         >
-          Oloo.io
-        </Ooloo>
+          ooloo.io
+        </Link>
         <Links to="/">
           <Sign src={GetLogo} alt={GetLogo} />
         </Links>
@@ -25,7 +25,8 @@ export default function Footer() {
     </Wrapper>
   );
 }
-const Ooloo = styled(NavLink)`
+const Link = styled(NavLink)`
+  text-decoration: none;
   :root {
     --brownish-grey: #636363;
   }

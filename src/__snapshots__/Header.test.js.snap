@@ -41,9 +41,11 @@ exports[`Checks header component renders correctly 1`] = `
         data-testid="howitworks"
       >
         <a
-          className="sc-jSFkmK fFLOBj"
+          aria-current="page"
+          className="active"
           href="/#how-it-works"
           onClick={[Function]}
+          style={Object {}}
         >
           How it works
         </a>
