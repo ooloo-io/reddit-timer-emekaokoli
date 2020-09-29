@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Table from './images/table.svg';
 
@@ -16,13 +17,17 @@ export default function HeroSection() {
           </Header>
           <Main>
             <SearchContainer>
-              <Search>show me the best time</Search>
+              <Link to="/search">
+                <Search>show me the best time</Search>
+              </Link>
             </SearchContainer>
             <CTAContainer>
               <CTA>/r/javascript</CTA>
             </CTAContainer>
             <ImgContainer>
-              <Img src={Table} alt={Table} />
+              <Link to="/search">
+                <Img src={Table} alt={Table} />
+              </Link>
             </ImgContainer>
             <Section id="how-it-works">
               <H1>How it works</H1>
