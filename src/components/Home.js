@@ -1,18 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import HeroSection from './HeroSection';
 
 export default function HomeScreen() {
   return (
     <>
-      <Div>
-        <Section id="about">About</Section>
-        <Section id="how-it-works">How it works</Section>
-      </Div>
+      <HeroSection />
     </>
   );
 }
-
-const Div = styled.div`
-height: 100vh;
-`;
-const Section = styled.section``;

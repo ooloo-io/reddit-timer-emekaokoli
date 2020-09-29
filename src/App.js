@@ -17,7 +17,7 @@ function App() {
         <Div>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/search" exact component={Search} />
+            <Route path="/search/javascript" exact component={Search} />
             <Route path="/how-it-works" exact component={HowItWorks} />
             <Route path="/about" exact component={About} />
           </Switch>
@@ -28,14 +28,14 @@ function App() {
   );
 }
 const Wrapper = styled.div`
-  // width: 80vmax;
+  width: 85vw;
   // margin: 0 10rem 0 10rem;
   text-align: left;
   margin: 0 auto;
-  // height:100vh;
+  height:100vh;
 `;
 const Div = styled.div`
-  height: 100vh;
+  // height: 100vh;
 `;
 
 export default App;

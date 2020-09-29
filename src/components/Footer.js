@@ -71,8 +71,8 @@ const TermsPrivacy = styled.div`
 `;
 const Wrapper = styled.footer`
   bottom: 0;
-  left:0;
-  color:#636363;
+  left: 0;
+  color: #636363;
   // width: 1440px;
   width: 100%;
   //height: 100px;
