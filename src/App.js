@@ -1,41 +1,70 @@
+// import * as Normalize from '@csstools/normalize.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import styled from 'styled-components';
-import './App.css';
-import About from './components/About';
+import { ThemeProvider } from 'styled-components';
+import { Normalize } from 'styled-normalize';
+import { AppContainer } from './App.style';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
-import HowItWorks from './components/how-it-works';
 import Search from './components/Search';
+
+const theme = {
+  color: {
+    text: '#93918f',
+    dark: '#000000',
+    midDark: '#636363',
+    midLight: '#d5d5d5',
+    light: '#ffffff',
+    'gray-base': '#93918f',
+    primary: '#fdb755',
+    link: '#0087ff',
+    'brownish-grey': '#636363',
+    red: 'red',
+  },
+  size: {
+    headerHeight: '100px',
+    footerHeight: '100px',
+  },
+  font: {
+    family: {
+      default: '"Montserrat", sans-serif',
+      headline: '"Bitter", serif',
+    },
+    size: {
+      default: '1rem',
+      small: '0.8rem',
+    },
+    lineHeight: {
+      default: 1.69,
+    },
+  },
+};
 
 function App() {
   return (
-    <Wrapper>
-      <Router>
-        <Header />
-        <Div>
+    <ThemeProvider theme={theme}>
+      <Normalize />
+      <AppContainer>
+        <Router>
+          <Header />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/search" exact component={Search} />
-            <Route path="/how-it-works" exact component={HowItWorks} />
-            <Route path="/about" exact component={About} />
+            <Route path="/search/javascript" exact component={Search} />
+            <Route path="/terms">Terms Page</Route>
           </Switch>
-        </Div>
-        <Footer />
-      </Router>
-    </Wrapper>
+          <Footer />
+        </Router>
+      </AppContainer>
+    </ThemeProvider>
   );
 }
-const Wrapper = styled.div`
-  // width: 80vmax;
-  // margin: 0 10rem 0 10rem;
-  text-align: left;
-  margin: 0 auto;
-  // height:100vh;
-`;
-const Div = styled.div`
-  height: 100vh;
-`;
+// const AppContainer = styled.main`
+//   width: 85vw;
+//   // margin: 0 10rem 0 10rem;
+//   text-align: left;
+//   margin: 0 auto;
+//   height:100vh;
+// `;
 
 export default App;

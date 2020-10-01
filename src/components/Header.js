@@ -22,7 +22,7 @@ export default function Nav() {
               <Navlink to="/search/javascript">Search</Navlink>
             </LiTag>
             <LiTag data-testid="howitworks">
-              <Links as="/#how-it-works">How it works</Links>
+              <Links to="/#how-it-works">How it works</Links>
             </LiTag>
             <LiTag data-testid="about">
               <Links to="/#about">
