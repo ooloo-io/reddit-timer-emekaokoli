@@ -16,9 +16,11 @@ body {
     'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
+  background-color: #fff;
   color: #000;
   height: 100vh;
+  letter-spacing: 0.08px !important;
+  line-height: 1.69 !important;
 }
 
 code {
