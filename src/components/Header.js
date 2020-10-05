@@ -6,6 +6,7 @@ import {
   Logo,
   Navlink,
   NavTag,
+  // eslint-disable-next-line comma-dangle
   UlTag
 } from './common/header/Header.style';
 
