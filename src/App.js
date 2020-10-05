@@ -23,7 +23,7 @@ const theme = {
     red: 'red',
   },
   size: {
-    headerHeight: '100px',
+    headHeight: '100px',
     footerHeight: '100px',
   },
   font: {
