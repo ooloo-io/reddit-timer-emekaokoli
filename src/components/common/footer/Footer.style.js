@@ -21,7 +21,6 @@ export const TermsPrivacy = styled(ParentDiv)`
   text-align: right;
   font-size: ${(props) => props.theme.font.size.small};
 `;
-
 export const Ooloo = styled(ParentDiv)`
   text-align: left;
   font-size: ${(props) => props.theme.font.size.small};

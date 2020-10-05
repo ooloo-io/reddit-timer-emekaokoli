@@ -59,12 +59,5 @@ function App() {
     </ThemeProvider>
   );
 }
-// const AppContainer = styled.main`
-//   width: 85vw;
-//   // margin: 0 10rem 0 10rem;
-//   text-align: left;
-//   margin: 0 auto;
-//   height:100vh;
-// `;
 
 export default App;

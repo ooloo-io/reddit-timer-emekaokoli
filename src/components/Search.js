@@ -29,6 +29,4 @@ const App = styled.div`
   height: 100%;
 `;
 const Input = styled.input`
-  // width: 50vmin;
-  // height: 3vmin;
 `;
