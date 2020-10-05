@@ -36,7 +36,7 @@ export const Logo = styled(logounstyled)`
 export const Links = styled(Link)`
   text-decoration: none;
   transition: all 0.3s ease 0s;
-  color: ${(props) => props.theme.color.link} 
+  color: #0087ff;
   &:hover {
     transition: all 0.3s ease 0s;
     color: ${(props) => props.theme.color.primary};
