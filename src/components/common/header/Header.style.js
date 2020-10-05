@@ -4,7 +4,7 @@ import { ReactComponent as logounstyled } from '../../images/elements-logo.svg';
 
 export const Container = styled.header`
   width: 100%;
-  height: ${(props) => props.theme.size.headerHeight};
+  height: 100px;
   margin: 0;
   display: flex;
   align-items: center;
@@ -31,23 +31,22 @@ export const Logo = styled(logounstyled)`
   object-fit: contain;
   margin: 0.8rem;
   cursor: pointer;
-  display:block;
+  display: block;
 `;
 export const Links = styled(Link)`
   text-decoration: none;
   transition: all 0.3s ease 0s;
-  color: ${(props) => props.theme.color.link} 
+  color: #0087ff;
   &:hover {
     transition: all 0.3s ease 0s;
-    color: ${(props) => props.theme.color.primary};
+    color: #0087ff;
   }
-  
 `;
 export const Navlink = styled(NavLink)`
   text-decoration: none;
-  color: ${(props) => props.theme.color.link} 
+  color: #0087ff;
   &:hover {
     transition: all 0.3s ease 0s;
-    color: ${(props) => props.theme.color.primary};
+    color: #fdb755;
   }
 `;
