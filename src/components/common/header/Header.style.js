@@ -4,7 +4,7 @@ import { ReactComponent as logounstyled } from '../../images/elements-logo.svg';
 
 export const Container = styled.header`
   width: 100%;
-  height: 100px;
+  height: ${(props) => props.theme.size.headerHeight || '100px'};
   margin: 0;
   display: flex;
   align-items: center;
@@ -39,7 +39,7 @@ export const Links = styled(Link)`
   color: #0087ff;
   &:hover {
     transition: all 0.3s ease 0s;
-    color: ${(props) => props.theme.color.primary};
+    color: ${(props) => props.theme.color.primary || '#0087ff'};
   }
   
 `;
