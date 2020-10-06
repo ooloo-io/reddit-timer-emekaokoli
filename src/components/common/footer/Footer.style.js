@@ -13,7 +13,7 @@ export const Container = styled.footer`
 `;
 const ParentDiv = styled(Link)`
   text-decoration: none;
-  color: ${(props) => props.theme.color.semidark};
+  color: ${(props) => props.theme.color.midDark};
   font-size: ${(props) => props.theme.font.size.default};
   flex: 1;
 `;
