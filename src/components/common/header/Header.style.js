@@ -2,9 +2,10 @@ import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { ReactComponent as logounstyled } from '../../images/elements-logo.svg';
 
+// height: 100px;
 export const Container = styled.header`
   width: 100%;
-  height: 100px;
+  height: ${(props) => props.theme.size.headerHeight};
   margin: 0;
   display: flex;
   align-items: center;
@@ -25,6 +26,7 @@ export const LiTag = styled.li`
   display: inline-block;
   align-content: flex-start;
 `;
+//
 export const Logo = styled(logounstyled)`
   width: 150px;
   height: 36px;
@@ -33,20 +35,21 @@ export const Logo = styled(logounstyled)`
   cursor: pointer;
   display: block;
 `;
+// color: #0087ff;
 export const Links = styled(Link)`
   text-decoration: none;
   transition: all 0.3s ease 0s;
-  color: #0087ff;
+  color: ${(props) => props.theme.color.link}
   &:hover {
     transition: all 0.3s ease 0s;
-    color: #0087ff;
+    color: ${(props) => props.theme.color.primary};
   }
 `;
 export const Navlink = styled(NavLink)`
   text-decoration: none;
-  color: #0087ff;
+  color: ${(props) => props.theme.color.link}
   &:hover {
     transition: all 0.3s ease 0s;
-    color: #fdb755;
+    color: ${(props) => props.theme.color.primary};
   }
 `;
