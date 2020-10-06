@@ -15,6 +15,7 @@ import {
   SearchContainer,
   Section,
   Table,
+  // eslint-disable-next-line comma-dangle
   Ul
 } from './common/heroSection/HeroSection.style';
 
