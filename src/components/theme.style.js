@@ -10,6 +10,7 @@ export const theme = {
     primary: '#fdb755',
     link: '#0087ff',
     'brownish-grey': '#636363',
+  },
   size: {
     headerHeight: '100px',
     footerHeight: '100px',

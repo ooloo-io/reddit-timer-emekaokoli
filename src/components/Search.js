@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-
-import { AppContainer, Input } from './common/search/Search.style';
-
+import styled from 'styled-components';
 
 export default function SearchScreen() {
   const [input, setInput] = useState('');
@@ -12,8 +10,7 @@ export default function SearchScreen() {
   };
   return (
     <>
-
-      <AppContainer>
+      <App>
         <Input
           type="text"
           placeholder="Javascript"
@@ -21,8 +18,17 @@ export default function SearchScreen() {
           onChange={handleInput}
           value={input}
         />
-
-      </AppContainer>
+      </App>
     </>
   );
 }
+const App = styled.div`
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  height: 100%;
+`;
+const Input = styled.input`
+  // width: 50vmin;
+  // height: 3vmin;
+`;
