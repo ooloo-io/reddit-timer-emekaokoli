@@ -102,18 +102,3 @@ test('"/r/javascript" button contains javascript', () => {
     screen.getByRole('button', { name: '/r/javascript' }),
   ).toBeInTheDocument();
 });
-
-// test('"Search link" link contains javascript', () => {
-//   render(
-//     <ThemeProvider theme={theme}>
-//       <Router>
-//         <HeroSection />
-//       </Router>
-//     </ThemeProvider>,
-//   );
-
-//   fireEvent.click(screen.getByRole('link', { name: 'table.svg"' }));
-//   expect(
-//     screen.getByRole('link', { name: 'table.svg"' }),
-//   ).toBeInTheDocument();
-// });
