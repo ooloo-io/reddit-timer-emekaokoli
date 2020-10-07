@@ -23,7 +23,9 @@ export default function HeroSection() {
   return (
     <>
       <Container>
+
         <Header>
+
           <Hero>No reactions to your reddit posts?</Hero>
           <H3>
             Great timing, great results! Find the best time to post on your
@@ -32,14 +34,18 @@ export default function HeroSection() {
         </Header>
         <Main>
           <SearchContainer>
+
             <Link to="/search/javascript">
+
               <Search>show me the best time</Search>
             </Link>
           </SearchContainer>
           <CTAContainer>
             <CTA>/r/javascript</CTA>
           </CTAContainer>
+
           <Link to="/search/javascript">
+
             <Table alt={Table} />
           </Link>
           <Section id="how-it-works">

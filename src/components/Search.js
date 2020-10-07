@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+
 import { AppContainer, Input } from './common/search/Search.style';
+
 
 export default function SearchScreen() {
   const [input, setInput] = useState('');
@@ -10,6 +12,7 @@ export default function SearchScreen() {
   };
   return (
     <>
+
       <AppContainer>
         <Input
           type="text"
@@ -18,6 +21,7 @@ export default function SearchScreen() {
           onChange={handleInput}
           value={input}
         />
+
       </AppContainer>
     </>
   );

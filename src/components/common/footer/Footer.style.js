@@ -5,7 +5,9 @@ import { ReactComponent as UnstyledLogo } from '../../images/elements-sign.svg';
 export const Container = styled.footer`
   width: 100%;
   max-width: 980px;
-  height: ${(props) => props.theme.size.footerHeight};
+
+  height: ${(props) => props.theme.size.footerHeight || '100px'};
+
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
@@ -13,7 +15,9 @@ export const Container = styled.footer`
 `;
 const ParentDiv = styled(Link)`
   text-decoration: none;
-  color: ${(props) => props.theme.color.midDark};
+
+  color: ${(props) => props.theme.color.semidark};
+
   font-size: ${(props) => props.theme.font.size.default};
   flex: 1;
 `;
