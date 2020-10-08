@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { ReactComponent as UnstyledLogo } from '../../images/table.svg';
 
@@ -23,9 +24,8 @@ export const Section = styled(section)`
 `;
 export const Header = styled.header``;
 export const SearchContainer = styled(Div)`
-  margin: 2rem;
-  padding: 1rem;
-  text-align: center;
+  padding: ${(props) => props.theme.font.size.default};
+  text-align:center;
 `;
 export const CTAContainer = styled(Div)`
   text-align: center;
@@ -90,17 +90,17 @@ export const Paragraph = styled.p`
   padding: 1rem;
 `;
 const Button = styled.button``;
-export const Search = styled(Button)`
+export const Search = styled(Link)`
   width: 217px;
-  height: 36px;
+  height: auto;
   border-radius: 4px;
   background-color: ${(props) => props.theme.color.primary};
   font-family: ${(props) => props.theme.font.family.default};
-  font-size: 14px;
+  font-size: ${(props) => props.theme.font.family.small};
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 0.64;
+  // line-height: 0.64;
   letter-spacing: normal;
   text-align: center;
   color: #ffffff;
@@ -108,12 +108,22 @@ export const Search = styled(Button)`
   text-transform: uppercase;
   border: 0;
   cursor: pointer;
+  margin: 5px;
+  text-decoration: none;
+`;
+export const Span = styled.span`
+  margin: ${(props) => props.theme.font.size.small} 0
+    ${(props) => props.theme.font.size.small} 0;
+  font-size: ${(props) => props.theme.font.size.small};
+  text-align: center;
+  display: block;
+  color: ${(props) => props.theme.color.light};
 `;
 export const CTA = styled(Button)`
   width: 107px;
   height: 29px;
   font-family: ${(props) => props.theme.font.family.default};
-  font-size: 16px;
+  font-size: ${(props) => props.theme.font.size.default};
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -123,11 +133,11 @@ export const CTA = styled(Button)`
   border: 0;
   cursor: pointer;
   text-align: center;
-  margin: 2rem;
 `;
 export const Table = styled(UnstyledLogo)`
   width: 831px;
   height: 320px;
+  max-width: 100%;
   object-fit: contain;
   margin: 0 10px 0 10px;
   justify-content: center;
