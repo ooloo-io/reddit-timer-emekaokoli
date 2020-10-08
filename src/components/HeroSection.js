@@ -14,7 +14,10 @@ import {
   Search,
   SearchContainer,
   Section,
+  Span,
+  // eslint-disable-next-line comma-dangle
   Table,
+
   // eslint-disable-next-line comma-dangle
   Ul
 } from './common/heroSection/HeroSection.style';
@@ -32,14 +35,14 @@ export default function HeroSection() {
         </Header>
         <Main>
           <SearchContainer>
-            <Link to="/search">
-              <Search>show me the best time</Search>
-            </Link>
+            <Search to="/search/javascript" type="button">
+              <Span> show me the best time</Span>
+            </Search>
           </SearchContainer>
           <CTAContainer>
             <CTA>/r/javascript</CTA>
           </CTAContainer>
-          <Link to="/search">
+          <Link to="/search/javascript">
             <Table alt={Table} />
           </Link>
           <Section id="how-it-works">
