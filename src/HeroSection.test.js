@@ -60,33 +60,6 @@ test('"Search" link points to the correct page', () => {
     screen.getByRole('link', { name: /show me the best time/i }),
   ).toBeInTheDocument();
 });
-
-test('"About" contains about ', () => {
-  render(
-    <ThemeProvider theme={theme}>
-      <Router>
-        <HeroSection />
-      </Router>
-    </ThemeProvider>,
-  );
-
-  fireEvent.click(screen.getByRole('heading', { name: /About/i }));
-  expect(screen.getByRole('heading', { name: 'About' })).toBeInTheDocument();
-});
-test('"how it works" contains how it works ', () => {
-  render(
-    <ThemeProvider theme={theme}>
-      <Router>
-        <HeroSection />
-      </Router>
-    </ThemeProvider>,
-  );
-
-  fireEvent.click(screen.getByRole('heading', { name: /how it works/i }));
-  expect(
-    screen.getByRole('heading', { name: /how it works/i }),
-  ).toBeInTheDocument();
-});
 test('"/r/javascript" button contains javascript', () => {
   render(
     <ThemeProvider theme={theme}>
