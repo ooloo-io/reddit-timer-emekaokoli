@@ -45,11 +45,9 @@ test('"about link" points to a new page', () => {
     </ThemeProvider>,
   );
 
-  fireEvent.click(screen.getByRole('link', { name: 'ooloo.io' }));
+  fireEvent.click(screen.getByRole('link', { name: /ooloo.io/i }));
 
-  expect(
-    screen.getByRole('link', { name: 'ooloo.io' }),
-  ).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: /ooloo.io/i })).toBeInTheDocument();
 });
 
 test('"about employers link" points to a new page ', () => {

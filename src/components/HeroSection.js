@@ -19,7 +19,7 @@ export default function HeroSection() {
   return (
     <>
       <Container>
-        <Header id="about">
+        <Header>
           <Hero>No reactions to your reddit posts?</Hero>
           <H3>
             Great timing, great results! Find the best time to post on your
