@@ -13,9 +13,6 @@ export const Container = styled(Div)`
 export const Main = styled(Div)`
   min-height: 50vh;
   width: 110vmin;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
   margin: 0 auto;
 `;
 export const Section = styled(section)`

@@ -38,13 +38,10 @@ export default function InfoSection() {
               {' '}
               with the goal to implement a pixel-perfect real-world application
               with professional workflows and tools like Kanban, ClickUp,
-              Zeplin, GitHub, pull requests and code reviews. Click
-              {' '}
+              Zeplin, GitHub, pull requests and code reviews.
               <Links as="a" href="https://ooloo.io/employers">
-                here
+                Click here for more information.
               </Links>
-              {' '}
-              for more information.
             </Paragraph>
           </Section>
         </Main>
