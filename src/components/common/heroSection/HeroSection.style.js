@@ -3,51 +3,48 @@ import styled from 'styled-components';
 import { ReactComponent as UnstyledLogo } from '../../images/table.svg';
 
 const Div = styled.div``;
-const section = styled.section``;
+const section = styled.article``;
 
 export const Container = styled(Div)`
-  min-height: 100vh;
+  min-height: ${(props) => props.theme.size.halfHeight};
   display: flex;
   flex-direction: column;
 `;
 export const Main = styled(Div)`
-  min-height: 100vh;
-  width: 110vmin;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  margin: 0 auto;
+  min-height: ${(props) => props.theme.size.halfHeight};
+  width: ${(props) => props.theme.font.size.vmin};
+  margin: ${(props) => props.theme.font.size.marginCenter};
 `;
 export const Section = styled(section)`
-  text-align: center;
-  margin: 3rem 0 7rem 0;
+  text-align: ${(props) => props.theme.font.size.center};
+  margin: ${(props) => props.theme.font.size.threeRem} 0 ${(props) => props.theme.font.size.seveRem} 0;
 `;
 export const Header = styled.header``;
 export const SearchContainer = styled(Div)`
   padding: ${(props) => props.theme.font.size.default};
-  text-align:center;
+  text-align: ${(props) => props.theme.font.size.center};
 `;
 export const CTAContainer = styled(Div)`
-  text-align: center;
-  margin: 2rem;
+  text-align: ${(props) => props.theme.font.size.center};
+  margin: ${(props) => props.theme.font.size.large}; ;
 `;
 export const Hero = styled.h1`
-  min-width: 616px;
-  height: 46px;
+  min-width: ${(props) => props.theme.font.size.vwidth};
+  height: ${(props) => props.theme.font.size.fourtySix};
   font-family: ${(props) => props.theme.font.family.headline};
-  font-size: 38px;
+  font-size: ${(props) => props.theme.font.size.thirty8};
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
-  color: #000000;
-  margin: 1rem;
+  color: ${(props) => props.theme.color.dark};
+  margin: ${(props) => props.theme.font.size.default};
 `;
 export const H4 = styled.h4`
   font-family: ${(props) => props.theme.font.family.default};
-  font-size: 1.5rem;
+  font-size: ${(props) => props.theme.font.size.onePointFive};
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -55,17 +52,17 @@ export const H4 = styled.h4`
   letter-spacing: normal;
   text-align: left;
   color: ${(props) => props.theme.color.dark};
-  margin: 0.5rem;
+  margin: ${(props) => props.theme.font.size.zeroPointFive};
 `;
 export const H3 = styled.h3`
   font-family: ${(props) => props.theme.font.family.default};
-  font-size: 1rem;
+  font-size: ${(props) => props.theme.font.size.default};
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  text-align: center;
+  text-align: ${(props) => props.theme.font.size.center};
   color: ${(props) => props.theme.color['gray-base']};
 `;
 export const Ul = styled.ul``;
@@ -78,7 +75,7 @@ export const Li = styled.li`
 `;
 export const Paragraph = styled.p`
   font-family: ${(props) => props.theme.font.family.default};
-  font-size: 1rem;
+  font-size: ${(props) => props.theme.font.size.default};
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -86,8 +83,8 @@ export const Paragraph = styled.p`
   letter-spacing: normal;
   color: ${(props) => props.theme.color['gray-base']};
   text-align: left;
-  margin: 1rem 0 1rem 0;
-  padding: 1rem;
+  margin: ${(props) => props.theme.font.size.default} 0 ${(props) => props.theme.font.size.default} 0;
+  padding:  ${(props) => props.theme.font.size.default};
 `;
 const Button = styled.button``;
 export const Search = styled(Link)`
@@ -102,20 +99,20 @@ export const Search = styled(Link)`
   font-style: normal;
   // line-height: 0.64;
   letter-spacing: normal;
-  text-align: center;
-  color: #ffffff;
+  text-align: ${(props) => props.theme.font.size.center};
+  color: ${(props) => props.theme.color.light};
   background-color: #e1b36d;
   text-transform: uppercase;
   border: 0;
   cursor: pointer;
-  margin: 5px;
+  margin: ${(props) => props.theme.font.size.fivePixels};
   text-decoration: none;
 `;
 export const Span = styled.span`
   margin: ${(props) => props.theme.font.size.small} 0
     ${(props) => props.theme.font.size.small} 0;
   font-size: ${(props) => props.theme.font.size.small};
-  text-align: center;
+  text-align: ${(props) => props.theme.font.size.center};
   display: block;
   color: ${(props) => props.theme.color.light};
 `;
@@ -132,15 +129,15 @@ export const CTA = styled(Button)`
   color: ${(props) => props.theme.color['gray-base']};
   border: 0;
   cursor: pointer;
-  text-align: center;
+  text-align: ${(props) => props.theme.font.size.center};
 `;
 export const Table = styled(UnstyledLogo)`
   width: 831px;
   height: 320px;
-  max-width: 100%;
+  max-width: ${(props) => props.theme.size.fullPage};
   object-fit: contain;
   margin: 0 10px 0 10px;
-  justify-content: center;
-  align-content: center;
-  margin: 0 auto;
+  justify-content: ${(props) => props.theme.font.size.center};
+  align-content: ${(props) => props.theme.font.size.center};
+  margin: ${(props) => props.theme.font.size.marginCenter};
 `;

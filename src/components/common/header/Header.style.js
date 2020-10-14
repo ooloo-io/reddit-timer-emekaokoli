@@ -1,4 +1,5 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 import styled from 'styled-components';
 import { ReactComponent as logounstyled } from '../../images/elements-logo.svg';
 
@@ -36,7 +37,7 @@ export const Logo = styled(logounstyled)`
   display: block;
 `;
 // color: #0087ff;
-export const Links = styled(Link)`
+export const Links = styled(NavHashLink)`
   text-decoration: none;
   transition: all 0.3s ease 0s;
   color: ${(props) => props.theme.color.link}

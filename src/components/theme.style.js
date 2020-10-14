@@ -14,6 +14,9 @@ export const theme = {
   size: {
     headerHeight: '100px',
     footerHeight: '100px',
+    halfHeight: '50vh',
+    fullHeight: '100vh',
+    fullPage: '100%',
   },
   font: {
     family: {
@@ -22,8 +25,19 @@ export const theme = {
     },
     size: {
       default: '1rem',
+      onePointFive: '1.5rem',
       small: '0.8rem',
       large: '2rem',
+      threeRem: '3rem',
+      seveRem: '7rem',
+      marginCenter: '0 auto',
+      vmin: '110vmin',
+      vwidth: '616px',
+      fourtySix: '46px',
+      thirty8: '38px',
+      zeroPointFive: '0.5rem',
+      fivePixels: '5px',
+      center: 'center',
     },
     lineHeight: {
       default: 1.69,
