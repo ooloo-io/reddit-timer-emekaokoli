@@ -20,10 +20,12 @@ export default function Nav() {
         <NavTag>
           <UlTag>
             <LiTag data-testid="search">
-              <Navlink to="/search/javascript">Search</Navlink>
+              <Navlink to="/subredditform/javascript">Search</Navlink>
             </LiTag>
             <LiTag data-testid="howitworks">
-              <Links smooth to="/#how-it-works">How it works</Links>
+              <Links smooth to="/#how-it-works">
+                How it works
+              </Links>
             </LiTag>
             <LiTag data-testid="about">
               <Links smooth to="/#about">

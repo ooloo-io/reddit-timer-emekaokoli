@@ -28,14 +28,14 @@ export default function HeroSection() {
         </Header>
         <Main>
           <SearchContainer>
-            <Search to="/search/javascript" type="button">
+            <Search to="/subredditform/javascript" type="button">
               <Span> show me the best time</Span>
             </Search>
           </SearchContainer>
           <CTAContainer>
-            <CTA>/r/javascript</CTA>
+            <CTA to="/subredditform/javascript">/r/javascript</CTA>
           </CTAContainer>
-          <Link to="/search/javascript">
+          <Link to="/subredditform/javascript">
             <Table alt={Table} />
           </Link>
         </Main>

@@ -2,7 +2,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 import styled from 'styled-components';
 
 const Div = styled.div``;
-const section = styled.section``;
+const section = styled.article``;
 export const Main = styled(Div)`
   //min-height: 100vmin;
   width: ${(props) => props.theme.font.size.vmin};
