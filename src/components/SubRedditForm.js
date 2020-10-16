@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import {
   AppContainer, AppMain, Button, H1,
   // eslint-disable-next-line comma-dangle
@@ -7,25 +8,35 @@ import {
 
 export default function SubRedditForm() {
   const [input, setInput] = React.useState('javascript');
-  const handleInput = (e) => {
-    setInput(e.target.value);
-    e.preventDefault();
-    // setInput('');
+  const history = useHistory();
+
+  const handleInputChange = (e) => {
+    setInput(e.currentTarget.value);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(input);
+    history.push(`/search/${input}`);
+  };
+
   return (
     <AppContainer>
       <H1>Find the best time for a subreddit</H1>
       <AppMain>
-        r/
-        {' '}
-        <Input
-          type="text"
-          placeholder=""
-          name="search"
-          onChange={handleInput}
-          value={input}
-        />
-        <Button>Search</Button>
+        <form>
+          r/
+          {' '}
+          <Input
+            type="text"
+            name={input}
+            onChange={handleInputChange}
+            value={input}
+          />
+          <Button type="submit" onClick={handleSubmit}>
+            Search
+          </Button>
+        </form>
       </AppMain>
     </AppContainer>
   );

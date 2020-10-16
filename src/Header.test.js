@@ -4,15 +4,15 @@ import React from 'react';
 import App from './App';
 
 afterEach(cleanup);
-it('containts search link', async () => {
+it('contains search link', async () => {
   const { getByTestId } = render(<App />);
   expect(getByTestId('search')).toHaveTextContent('Search');
 });
-it('containts how it works in the link', async () => {
+it('contains how it works in the link', async () => {
   const { getByTestId } = render(<App />);
   expect(getByTestId('howitworks')).toHaveTextContent('How it works');
 });
-it('containts about link', async () => {
+it('contains about link', async () => {
   const { getByTestId } = render(<App />);
   expect(getByTestId('about')).toHaveTextContent('About');
 });

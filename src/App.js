@@ -19,12 +19,10 @@ function App() {
         <AppContainer>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route
-              path="/subredditform/javascript"
-              exact
-              component={SubRedditForm}
-            />
-            <Route path="/terms">Terms Page</Route>
+            <Route path="/search/javascript" exact component={SubRedditForm} />
+            <Route exact path="/terms">
+              Terms Page
+            </Route>
           </Switch>
         </AppContainer>
         <Footer />

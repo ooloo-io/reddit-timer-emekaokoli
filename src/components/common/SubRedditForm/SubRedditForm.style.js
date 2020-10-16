@@ -7,10 +7,14 @@ export const AppContainer = styled(Container)`
   text-align:center;
 `;
 export const AppMain = styled(Main)`
-  width:${(props) => props.theme.size.halfHeight};
+ // width:${(props) => props.theme.size.halfHeight};
 `;
 export const Input = styled.input`
-  // width: 92px;
+  width: 370px;
+  height: 36px;
+  border-radius: 2px;
+  border: solid 1px ${(props) => props.theme.color.semiLight};
+  background-color: ${(props) => props.theme.color.light};
   height: 36px;
 `;
 export const Button = styled.button`
@@ -25,6 +29,7 @@ export const Button = styled.button`
 `;
 export const H1 = styled.h1`
   margin: ${(props) => props.theme.font.size.marginCenter};
+  padding-bottom: 30px;
   width: 611px;
   height: 46px;
   font-family: ${(props) => props.theme.font.family.headlinetext};
