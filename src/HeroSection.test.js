@@ -43,7 +43,7 @@ test('"Header" contains h3 tag', () => {
     }),
   ).toBeInTheDocument();
 });
-test('"Search" link points to the correct page', () => {
+test("page should have 'show me the best time button'", () => {
   render(
     <ThemeProvider theme={theme}>
       <Router>

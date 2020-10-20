@@ -14,6 +14,7 @@ export const Main = styled(Div)`
   min-height: ${(props) => props.theme.size.halfHeight};
   width: ${(props) => props.theme.font.size.vmin};
   margin: ${(props) => props.theme.font.size.marginCenter};
+  text-align: ${(props) => props.theme.font.size.center};
 `;
 export const Section = styled(section)`
   text-align: ${(props) => props.theme.font.size.center};

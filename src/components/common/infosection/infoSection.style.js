@@ -4,10 +4,8 @@ import styled from 'styled-components';
 const Div = styled.div``;
 const section = styled.article``;
 export const Main = styled(Div)`
-  //min-height: 100vmin;
+  min-height: ${(props) => props.theme.size.halfHeight};
   width: ${(props) => props.theme.font.size.vmin};
-  flex-direction: column;
-  justify-content: center;
   align-content: ${(props) => props.theme.font.size.center};
   margin: ${(props) => props.theme.font.size.marginCenter};
 `;
@@ -19,11 +17,16 @@ export const Container = styled(Div)`
 `;
 
 export const Section = styled(section)`
+  width: 37vw;
   text-align: center;
-  margin: ${(props) => props.theme.font.size.marginCenter} 0 
-  ${(props) => props.theme.font.size.marginCenter} 0;
+  margin: ${(props) => props.theme.font.size.marginCenter}
+    ${(props) => props.theme.font.size.marginCenter};
+  padding: ${(props) => props.theme.font.size.large};
 `;
-
+export const WrapSection = styled(section)`
+  height: ${(props) => props.theme.size.halfHeight};
+ 
+`;
 export const Links = styled(Link)`
   color: ${(props) => props.theme.color.link};
   text-decoration: none;

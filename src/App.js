@@ -1,6 +1,11 @@
 // import * as Normalize from '@csstools/normalize.css';
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  // eslint-disable-next-line comma-dangle
+  Switch
+} from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 import { AppContainer } from './App.style';
@@ -19,7 +24,7 @@ function App() {
         <AppContainer>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/search/javascript" exact component={SubRedditForm} />
+            <Route path="/search/:subreddit" exact component={SubRedditForm} />
             <Route exact path="/terms">
               Terms Page
             </Route>

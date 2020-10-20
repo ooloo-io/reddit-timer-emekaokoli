@@ -17,6 +17,8 @@ export const theme = {
     halfHeight: '50vh',
     fullHeight: '100vh',
     fullPage: '100%',
+    halfSize: '50vw',
+    auto: 'auto',
   },
   font: {
     family: {

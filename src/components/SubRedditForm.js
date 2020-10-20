@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import {
   AppContainer, AppMain, Button, H1,
@@ -6,36 +6,39 @@ import {
   Input
 } from './common/SubRedditForm/SubRedditForm.style';
 
-export default function SubRedditForm() {
-  const [input, setInput] = React.useState('javascript');
+export default function SubRedditForm({ match }) {
+  // const { subreddit } = useParams();
+  const s = match.params.subreddit;
+  const [input, setInput] = useState(() => 'reactjs');
   const history = useHistory();
-
+  console.log(s);
   const handleInputChange = (e) => {
-    setInput(e.currentTarget.value);
+    e.persist();
+    setInput(() => e.target.value);
   };
 
   const handleSubmit = (e) => {
+    if (input === '') return;
     e.preventDefault();
-    console.log(input);
     history.push(`/search/${input}`);
+    // setInput(() => `${reactjs}`);
+    setInput('');
   };
 
   return (
     <AppContainer>
       <H1>Find the best time for a subreddit</H1>
       <AppMain>
-        <form>
+        <form onSubmit={handleSubmit}>
           r/
           {' '}
           <Input
             type="text"
-            name={input}
+            // name={input}
             onChange={handleInputChange}
             value={input}
           />
-          <Button type="submit" onClick={handleSubmit}>
-            Search
-          </Button>
+          <Button type="submit" onClick={handleSubmit}>Search</Button>
         </form>
       </AppMain>
     </AppContainer>

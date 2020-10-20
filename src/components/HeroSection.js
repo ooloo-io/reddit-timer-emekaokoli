@@ -5,13 +5,25 @@ import {
   CTA,
   CTAContainer,
   H3,
+<<<<<<< Updated upstream
   Header,
   Hero,
   Main,
   Search,
   SearchContainer,
   Span, SpanCTA,
+=======
 
+  Header,
+  Hero,
+
+  Main,
+
+  Search,
+  SearchContainer,
+>>>>>>> Stashed changes
+
+  Span,
   // eslint-disable-next-line comma-dangle
   Table
 } from './common/heroSection/HeroSection.style';
