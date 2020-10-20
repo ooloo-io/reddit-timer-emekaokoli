@@ -40,7 +40,6 @@ export const theme = {
       zeroPointFive: '0.5rem',
       fivePixels: '5px',
       center: 'center',
-      headLineText: '2.375rem',
     },
     lineHeight: {
       default: 1.69,

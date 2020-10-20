@@ -137,7 +137,6 @@ export const CTA = styled(Search)`
   border: 0;
   cursor: pointer;
   text-align: ${(props) => props.theme.font.size.center};
-  
 `;
 export const Table = styled(UnstyledLogo)`
   width: 831px;
