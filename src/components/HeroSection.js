@@ -34,9 +34,9 @@ export default function HeroSection() {
             </Search>
           </SearchContainer>
           <CTAContainer>
-            <CTA to="/search/javascript" type="button">
+            <CTA to="/search/javacript" type="button">
               <SpanCTA type="button" role="button">
-                /r/javascript
+                r/javascript
               </SpanCTA>
             </CTA>
           </CTAContainer>

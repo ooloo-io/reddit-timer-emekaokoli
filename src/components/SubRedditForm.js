@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 import {
   AppContainer, AppMain, Button, H1,
   // eslint-disable-next-line comma-dangle
@@ -7,11 +7,10 @@ import {
 } from './common/SubRedditForm/SubRedditForm.style';
 
 export default function SubRedditForm({ match }) {
-  // const { subreddit } = useParams();
-  const s = match.params.subreddit;
-  const [input, setInput] = useState(() => 'reactjs');
+  const { subreddit } = useParams();
+  // const { subreddit } = match.params;
+  const [input, setInput] = useState(() => subreddit);
   const history = useHistory();
-  console.log(s);
   const handleInputChange = (e) => {
     e.persist();
     setInput(() => e.target.value);
@@ -21,9 +20,10 @@ export default function SubRedditForm({ match }) {
     if (input === '') return;
     e.preventDefault();
     history.push(`/search/${input}`);
-    // setInput(() => `${reactjs}`);
-    setInput('');
   };
+  useEffect(() => {
+    setInput(() => `${subreddit}`);
+  }, [subreddit]);
 
   return (
     <AppContainer>
@@ -34,11 +34,11 @@ export default function SubRedditForm({ match }) {
           {' '}
           <Input
             type="text"
-            // name={input}
+            name={input}
             onChange={handleInputChange}
             value={input}
           />
-          <Button type="submit" onClick={handleSubmit}>Search</Button>
+          <Button type="submit">Search</Button>
         </form>
       </AppMain>
     </AppContainer>
