@@ -11,6 +11,7 @@ import {
   Search,
   SearchContainer,
   Span,
+  SpanCTA,
   // eslint-disable-next-line comma-dangle
   Table
 } from './common/heroSection/HeroSection.style';
@@ -33,10 +34,14 @@ export default function HeroSection() {
             </Search>
           </SearchContainer>
           <CTAContainer>
-            <CTA>/r/javascript</CTA>
+            <CTA to="/search/javacript" type="button">
+              <SpanCTA type="button" role="button">
+                r/javascript
+              </SpanCTA>
+            </CTA>
           </CTAContainer>
-          <Link to="/search/javascript">
-            <Table alt={Table} />
+          <Link to="/search/javascript" role="link">
+            <Table alt="image table" aria-label="image table" role="img" />
           </Link>
         </Main>
       </Container>

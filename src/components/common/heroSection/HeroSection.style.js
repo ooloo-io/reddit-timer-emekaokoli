@@ -14,6 +14,7 @@ export const Main = styled(Div)`
   min-height: ${(props) => props.theme.size.halfHeight};
   width: ${(props) => props.theme.font.size.vmin};
   margin: ${(props) => props.theme.font.size.marginCenter};
+  text-align: ${(props) => props.theme.font.size.center};
 `;
 export const Section = styled(section)`
   text-align: ${(props) => props.theme.font.size.center};
@@ -86,7 +87,6 @@ export const Paragraph = styled.p`
   margin: ${(props) => props.theme.font.size.default} 0 ${(props) => props.theme.font.size.default} 0;
   padding:  ${(props) => props.theme.font.size.default};
 `;
-const Button = styled.button``;
 export const Search = styled(Link)`
   width: 217px;
   height: auto;
@@ -116,7 +116,13 @@ export const Span = styled.span`
   display: block;
   color: ${(props) => props.theme.color.light};
 `;
-export const CTA = styled(Button)`
+export const SpanCTA = styled(Span)`
+  line-height: 5px;
+  text-transform: lowercase;
+  color: ${(props) => props.theme.color.semiLight};
+  font-size: ${(props) => props.theme.font.size.default};
+`;
+export const CTA = styled(Search)`
   width: 107px;
   height: 29px;
   font-family: ${(props) => props.theme.font.family.default};
@@ -126,7 +132,8 @@ export const CTA = styled(Button)`
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: ${(props) => props.theme.color['gray-base']};
+  color: ${(props) => props.theme.color.semiLight};
+  background-color: ${(props) => props.theme.color['gray-base']};
   border: 0;
   cursor: pointer;
   text-align: ${(props) => props.theme.font.size.center};

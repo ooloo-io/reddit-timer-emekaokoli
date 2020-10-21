@@ -43,7 +43,7 @@ test('"Header" contains h3 tag', () => {
     }),
   ).toBeInTheDocument();
 });
-test('"Search" link points to the correct page', () => {
+test("page should have 'show me the best time button'", () => {
   render(
     <ThemeProvider theme={theme}>
       <Router>
@@ -69,9 +69,9 @@ test('"/r/javascript" button contains javascript', () => {
     </ThemeProvider>,
   );
 
-  fireEvent.click(screen.getByRole('button', { name: '/r/javascript' }));
+  fireEvent.click(screen.getByRole('button', { name: 'r/javascript' }));
 
   expect(
-    screen.getByRole('button', { name: '/r/javascript' }),
+    screen.getByRole('button', { name: 'r/javascript' }),
   ).toBeInTheDocument();
 });

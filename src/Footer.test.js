@@ -38,7 +38,7 @@ test('"Terms & Privacy" link points to the correct page', () => {
   expect(screen.getByRole('link', { name: 'Terms & Privacy' })).toBeInTheDocument();
 });
 
-test('"/" link points to the correct page', () => {
+test('"/" image link points to the home page', () => {
   render(
     <ThemeProvider theme={theme}>
       <Router>
