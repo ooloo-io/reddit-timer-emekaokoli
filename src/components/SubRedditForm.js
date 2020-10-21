@@ -6,7 +6,7 @@ import {
   Input
 } from './common/SubRedditForm/SubRedditForm.style';
 
-export default function SubRedditForm({ match }) {
+export default function SubRedditForm() {
   const { subreddit } = useParams();
   // const { subreddit } = match.params;
   const [input, setInput] = useState(() => subreddit);
