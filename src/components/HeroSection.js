@@ -1,5 +1,8 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {
+  Link
+} from 'react-router-dom';
 import {
   Container,
   CTA,
@@ -16,7 +19,14 @@ import {
   Table
 } from './common/heroSection/HeroSection.style';
 
-export default function HeroSection() {
+export default function HeroSection(props, { match }) {
+  // const { id } = props.match;
+  // const { subred } = useParams();
+  const { subreddit } = 'js';
+  console.log('================hero====================');
+  console.log(props);
+  console.log(props.match);
+  console.log('=================sub===================');
   return (
     <>
       <Container>
@@ -34,7 +44,7 @@ export default function HeroSection() {
             </Search>
           </SearchContainer>
           <CTAContainer>
-            <CTA to="/search/javacript" type="button">
+            <CTA to={`/search/${subreddit}`} type="button">
               <SpanCTA type="button" role="button">
                 r/javascript
               </SpanCTA>

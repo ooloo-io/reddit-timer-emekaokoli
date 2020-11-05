@@ -14,6 +14,7 @@ describeOnBranches('load-the-data')('Load the Data', () => {
     cy.visitWithStubbedFetch('/search/javascript');
 
     // check if all requests have been sent (see /cypress/support/commands for aliases)
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
     cy.wait('@fetch-reddit-top-posts-page-1');
     cy.wait('@fetch-reddit-top-posts-page-2');
     cy.wait('@fetch-reddit-top-posts-page-3');
