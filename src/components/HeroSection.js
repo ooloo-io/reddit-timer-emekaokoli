@@ -19,14 +19,7 @@ import {
   Table
 } from './common/heroSection/HeroSection.style';
 
-export default function HeroSection(props, { match }) {
-  // const { id } = props.match;
-  // const { subred } = useParams();
-  const { subreddit } = 'js';
-  console.log('================hero====================');
-  console.log(props);
-  console.log(props.match);
-  console.log('=================sub===================');
+export default function HeroSection() {
   return (
     <>
       <Container>
@@ -44,7 +37,7 @@ export default function HeroSection(props, { match }) {
             </Search>
           </SearchContainer>
           <CTAContainer>
-            <CTA to={`/search/${subreddit}`} type="button">
+            <CTA to="/search/javascript" type="button">
               <SpanCTA type="button" role="button">
                 r/javascript
               </SpanCTA>

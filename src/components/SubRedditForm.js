@@ -21,7 +21,7 @@ export default function SubRedditForm({ history, match }) {
   const [loading, setLoading] = useState(() => false);
   const [display, setDisplay] = useState(() => []);
   // const [postCount, setPostCount] = useState(() => 0);
-  const [fullData, setFullData] = useState(() => []);
+  // const [fullData, setFullData] = useState(() => []);
   const handleInputChange = (e) => {
     e.persist();
     setInput(() => e.target.value);
@@ -41,24 +41,25 @@ export default function SubRedditForm({ history, match }) {
     };
   }, [fullData, subreddit]);
 
+  function axiosGet(sreddit, after) {
+    return axios.get(
+      `https://www.reddit.com/r/${sreddit}/top.json?t=year&limit=100${after ? `&after=${after}` : ''}`
+    );
+  }
+
   // load data area
   useEffect(() => {
     async function fetchData() {
-      const axiosGet = async (sreddit, after) => axios.get(
-        `https://www.reddit.com/r/${sreddit}/top.json?t=year&limit=100${
-          after ? `&after=${after}` : ''
-        }`,
-      );
+      setLoading(() => true);
       const fetchAllResults = async () => {
-        let dataStore = [];
         let after = null;
-
+        let dataStore = [];
         for (let i = 0; i < 5; i += 1) {
-          setLoading(() => true);
           // eslint-disable-next-line no-await-in-loop
           const results = await axiosGet(subreddit, after);
 
-          console.log(results.data.data.children);
+          // console.log(results.data.data);
+          // console.log(results.data.data.children);
 
           dataStore = [...dataStore, ...results.data.data.children];
           after = results.data.after;
@@ -66,49 +67,26 @@ export default function SubRedditForm({ history, match }) {
 
         return dataStore;
       };
-
       try {
-        fetchAllResults().then((f) => setFullData(() => f));
-
-        setDisplay(() => fullData);
+        // fetchAllResults().then((data) => setFullData(() => data));
+        const response = await fetchAllResults();
+        console.log(response);
+        // setFullData(response);
+        setDisplay(() => response);
         setLoading(() => false);
       } catch (e) {
         console.error(`An error has occured ${e}`);
       }
-      return fullData;
+
+      return display;
     }
     fetchData();
     // clean up after
     return () => {
       setLoading(() => false);
+      fetchData();
     };
   }, []);
-
-  // const displayResult = display.map((el) => (
-  //   <AppContainer key={el.data.id} as="article">
-  //     <Media body>
-  //       <Media heading left>{el.data.subreddit}</Media>
-  //       {el.data.title}
-  //       {el.data.selftext}
-  //       {el.data.author_fullname}
-  //     </Media>
-  //   </AppContainer>
-  // ));
-  //
-  console.log(`items in basket ${display.length}`);
-  const displayResult = display.map((el, index) => {
-    console.log(el.data.id);
-    return (
-      <div ket={el[index].data.data.children.data.id}>
-        Total data:
-        {'  '}
-        {el.length === undefined
-          ? el
-          : `Record not found for the subreddit:  ${subreddit}`}
-      </div>
-    );
-  });
-
   return (
     <AppContainer>
       <H1>Find the best time for a subreddit</H1>
@@ -126,8 +104,9 @@ export default function SubRedditForm({ history, match }) {
         </form>
         Total posts:
         {'  '}
-        {display.length === 0 ? display.length : 'No data to display!'}
-        {loading === false ? displayResult : <Loading />}
+        {loading === false
+          ? display.length
+          : <Loading /> || 'No data to display! '}
       </AppMain>
     </AppContainer>
   );
