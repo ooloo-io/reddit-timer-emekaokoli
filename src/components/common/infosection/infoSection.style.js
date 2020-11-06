@@ -25,7 +25,6 @@ export const Section = styled(section)`
 `;
 export const WrapSection = styled(section)`
   //height: ${(props) => props.theme.size.halfHeight};
- 
 `;
 export const Links = styled(Link)`
   color: ${(props) => props.theme.color.link};
