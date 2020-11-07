@@ -39,7 +39,7 @@ export default function SubRedditForm({ history, match }) {
     return () => {
       setInput(() => '');
     };
-  }, [fullData, subreddit]);
+  }, [subreddit]);
 
   function axiosGet(sreddit, after) {
     return axios.get(
@@ -62,7 +62,8 @@ export default function SubRedditForm({ history, match }) {
           // console.log(results.data.data.children);
 
           dataStore = [...dataStore, ...results.data.data.children];
-          after = results.data.after;
+          after = results.data.data.after;
+          // console.log(after);
         }
 
         return dataStore;
@@ -70,7 +71,7 @@ export default function SubRedditForm({ history, match }) {
       try {
         // fetchAllResults().then((data) => setFullData(() => data));
         const response = await fetchAllResults();
-        console.log(response);
+        // console.log(response);
         // setFullData(response);
         setDisplay(() => response);
         setLoading(() => false);
@@ -86,7 +87,7 @@ export default function SubRedditForm({ history, match }) {
       setLoading(() => false);
       fetchData();
     };
-  }, []);
+  }, [subreddit]);
   return (
     <AppContainer>
       <H1>Find the best time for a subreddit</H1>
