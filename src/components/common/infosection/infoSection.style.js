@@ -24,8 +24,7 @@ export const Section = styled(section)`
   padding: ${(props) => props.theme.font.size.large};
 `;
 export const WrapSection = styled(section)`
-  height: ${(props) => props.theme.size.halfHeight};
- 
+  //height: ${(props) => props.theme.size.halfHeight};
 `;
 export const Links = styled(Link)`
   color: ${(props) => props.theme.color.link};

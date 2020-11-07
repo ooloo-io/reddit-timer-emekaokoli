@@ -1,5 +1,8 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {
+  Link,
+} from 'react-router-dom';
 import {
   Container,
   CTA,
@@ -34,7 +37,7 @@ export default function HeroSection() {
             </Search>
           </SearchContainer>
           <CTAContainer>
-            <CTA to="/search/javacript" type="button">
+            <CTA to="/search/javascript" type="button">
               <SpanCTA type="button" role="button">
                 r/javascript
               </SpanCTA>
