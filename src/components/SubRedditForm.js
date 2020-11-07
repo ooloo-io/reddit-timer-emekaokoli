@@ -67,8 +67,8 @@ export default function SubRedditForm({ history, match }) {
         setDisplay(() => response);
         setLoading(() => false);
       } catch (e) {
-        return new Error(`An error has occured ${e}`);
-        // console.log(`has occured ${e}`);
+        // eslint-disable-next-line no-console
+        console.error(`An error has occured ${e}`);
       }
 
       return display;
@@ -79,7 +79,8 @@ export default function SubRedditForm({ history, match }) {
       setLoading(() => false);
       fetchData();
     };
-  }, [subreddit]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <AppContainer>
       <H1>Find the best time for a subreddit</H1>
