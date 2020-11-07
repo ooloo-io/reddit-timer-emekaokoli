@@ -13,15 +13,12 @@ import {
 import { Loading } from './Loading';
 
 export default function SubRedditForm({ history, match }) {
-  // const { subreddit } = useParams();
-  // const history = useHistory();
   const { subreddit } = match.params;
 
   const [input, setInput] = useState(() => subreddit);
   const [loading, setLoading] = useState(() => false);
   const [display, setDisplay] = useState(() => []);
-  // const [postCount, setPostCount] = useState(() => 0);
-  // const [fullData, setFullData] = useState(() => []);
+
   const handleInputChange = (e) => {
     e.persist();
     setInput(() => e.target.value);
@@ -58,12 +55,8 @@ export default function SubRedditForm({ history, match }) {
           // eslint-disable-next-line no-await-in-loop
           const results = await axiosGet(subreddit, after);
 
-          // console.log(results.data.data);
-          // console.log(results.data.data.children);
-
           dataStore = [...dataStore, ...results.data.data.children];
           after = results.data.data.after;
-          // console.log(after);
         }
 
         return dataStore;
@@ -71,12 +64,11 @@ export default function SubRedditForm({ history, match }) {
       try {
         // fetchAllResults().then((data) => setFullData(() => data));
         const response = await fetchAllResults();
-        // console.log(response);
-        // setFullData(response);
         setDisplay(() => response);
         setLoading(() => false);
       } catch (e) {
-        console.error(`An error has occured ${e}`);
+        return new Error(`An error has occured ${e}`);
+        // console.log(`has occured ${e}`);
       }
 
       return display;
