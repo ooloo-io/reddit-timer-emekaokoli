@@ -10,6 +10,7 @@ import {
   // eslint-disable-next-line comma-dangle
   Input
 } from './common/SubRedditForm/SubRedditForm.style';
+import Heatmap from './Heatmap';
 import { Loading } from './Loading';
 
 export default function SubRedditForm({ history, match }) {
@@ -81,6 +82,7 @@ export default function SubRedditForm({ history, match }) {
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <AppContainer>
       <H1>Find the best time for a subreddit</H1>
@@ -96,11 +98,12 @@ export default function SubRedditForm({ history, match }) {
           />
           <Button type="submit">Search</Button>
         </form>
-        Total posts:
         {'  '}
-        {loading === false
-          ? display.length
-          : <Loading /> || 'No data to display! '}
+        {loading === false ? (
+          <Heatmap display={display} />
+        ) : (
+          <Loading /> || 'No data to display! '
+        )}
       </AppMain>
     </AppContainer>
   );
