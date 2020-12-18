@@ -41,7 +41,9 @@ export default function SubRedditForm({ history, match }) {
 
   function axiosGet(sreddit, after) {
     return axios.get(
-      `https://www.reddit.com/r/${sreddit}/top.json?t=year&limit=100${after ? `&after=${after}` : ''}`
+      `https://www.reddit.com/r/${sreddit}/top.json?t=year&limit=100${
+        after ? `&after=${after}` : ''
+      }`,
     );
   }
 
@@ -63,7 +65,6 @@ export default function SubRedditForm({ history, match }) {
         return dataStore;
       };
       try {
-        // fetchAllResults().then((data) => setFullData(() => data));
         const response = await fetchAllResults();
         setDisplay(() => response);
         setLoading(() => false);
@@ -80,7 +81,7 @@ export default function SubRedditForm({ history, match }) {
       setLoading(() => false);
       fetchData();
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -102,7 +103,7 @@ export default function SubRedditForm({ history, match }) {
         {loading === false ? (
           <Heatmap display={display} />
         ) : (
-          <Loading /> || 'No data to display! '
+          <Loading /> || 'Loading data... '
         )}
       </AppMain>
     </AppContainer>
