@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const TimeContainer = styled.div`
   margin: 0.6rem;
   padding: 1rem;
   text-align: center;
@@ -9,7 +9,7 @@ export const Container = styled.div`
   height: ${(props) => props.theme.color.heatmap.headerHeight};
 `;
 export const Hour = styled.div`
-  width: ${(props) => props.theme.size.heatmap.hour * 2}px;
+  width: ${(props) => props.theme.color.heatmap.size.heatmap.hour * 2}px;
   text-align: center;
   color: ${(props) => props.theme.color.heatmap.headerHour};
   font-size: ${(props) => props.theme.font.size.small};

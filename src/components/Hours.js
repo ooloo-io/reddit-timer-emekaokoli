@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Hour } from './common/Table/hours.style';
+import { Hour, TimeContainer } from './common/Table/hours.style';
 
 const hours = [
   '12:00am',
@@ -17,13 +17,13 @@ const hours = [
 ];
 function Hours() {
   return (
-    <Container>
+    <TimeContainer as="section">
       {hours.map((hour) => (
-        <Hour key={hour} title="time of day">
+        <Hour key={hour} title="time of day" as="article">
           {hour}
         </Hour>
       ))}
-    </Container>
+    </TimeContainer>
   );
 }
 

@@ -11,8 +11,6 @@ import {
 } from './common/header/Header.style';
 
 export default function Nav() {
-  // const { location } = useHistory();
-  // console.log(location);
   return (
     <>
       <Container>

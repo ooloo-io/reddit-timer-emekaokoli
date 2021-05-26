@@ -2,5 +2,5 @@ import styled from 'styled-components';
 
 // eslint-disable-next-line import/prefer-default-export
 export const AppContainer = styled.main`
-  min-height: ${(props) => `calc(100vh - ${props.theme.size.headerHeight} - ${props.theme.size.footerHeight})`};
+  min-height: ${(props) => `calc(100vh - ${props.theme.color.heatmap.size.headerHeight} - ${props.theme.color.heatmap.size.footerHeight})`};
 `;

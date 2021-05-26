@@ -10,6 +10,9 @@ export const theme = {
     primary: '#fdb755',
     link: '#0087ff',
     'brownish-grey': '#636363',
+    postsTable: {
+      link: '#0087ff',
+    },
     heatmap: {
       hourBackground: [
         '#e0e592',
@@ -30,21 +33,22 @@ export const theme = {
       headerHour: '#787878',
       headerBorder: '#f3f3f3',
       headerBackground: 'linear-gradient(to bottom, #fefefe, #e9e9e9)',
-    },
-  },
-  size: {
-    headerHeight: '100px',
-    footerHeight: '100px',
-    halfHeight: '50vh',
-    fullHeight: '100vh',
-    fullPage: '100%',
-    halfSize: '50vw',
-    auto: 'auto',
-    heatmap: {
-      width: 1114,
-      headerHeight: 52,
-      dayWidth: 154,
-      hour: (1114 - 154) / 24,
+
+      size: {
+        headerHeight: '100px',
+        footerHeight: '100px',
+        halfHeight: '50vh',
+        fullHeight: '100vh',
+        fullPage: '100%',
+        halfSize: '50vw',
+        auto: 'auto',
+        heatmap: {
+          width: 1114,
+          headerHeight: 52,
+          dayWidth: 154,
+          hour: (1114 - 154) / 24,
+        },
+      },
     },
   },
   font: {
@@ -56,6 +60,7 @@ export const theme = {
       default: '1rem',
       onePointFive: '1.5rem',
       small: '0.8rem',
+      medium: '0.875rem',
       large: '2rem',
       threeRem: '3rem',
       seveRem: '7rem',
@@ -67,6 +72,7 @@ export const theme = {
       zeroPointFive: '0.5rem',
       fivePixels: '5px',
       center: 'center',
+      headline: '2rem',
     },
     lineHeight: {
       default: 1.69,

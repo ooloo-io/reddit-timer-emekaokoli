@@ -6,12 +6,12 @@ const Div = styled.div``;
 const section = styled.article``;
 
 export const Container = styled(Div)`
-  min-height: ${(props) => props.theme.size.halfHeight};
+  min-height: ${(props) => props.theme.color.heatmap.size.halfHeight};
   display: flex;
   flex-direction: column;
 `;
 export const Main = styled(Div)`
-  min-height: ${(props) => props.theme.size.halfHeight};
+  min-height: ${(props) => props.theme.color.heatmap.size.halfHeight};
   width: ${(props) => props.theme.font.size.vmin};
   margin: ${(props) => props.theme.font.size.marginCenter};
   text-align: ${(props) => props.theme.font.size.center};
@@ -141,7 +141,7 @@ export const CTA = styled(Search)`
 export const Table = styled(UnstyledLogo)`
   width: 831px;
   height: 320px;
-  max-width: ${(props) => props.theme.size.fullPage};
+  max-width: ${(props) => props.theme.color.heatmap.size.fullPage};
   object-fit: contain;
   margin: 0 10px 0 10px;
   justify-content: ${(props) => props.theme.font.size.center};

@@ -7,7 +7,7 @@ export const AppContainer = styled(Container)`
   text-align:center;
 `;
 export const AppMain = styled(Main)`
- // width:${(props) => props.theme.size.halfHeight};
+ // width:${(props) => props.theme.color.heatmap.size.halfHeight};
 `;
 export const Input = styled.input`
   width: 370px;
@@ -26,6 +26,7 @@ export const Button = styled.button`
   background-color: ${(props) => props.theme.color.primary};
   color: ${(props) => props.theme.color.light};
   text-transform: uppercase;
+  font-size: ${(props) => props.theme.font.size.medium};
 `;
 export const H1 = styled.h1`
   margin: ${(props) => props.theme.font.size.marginCenter};
@@ -33,12 +34,18 @@ export const H1 = styled.h1`
   width: 611px;
   height: 46px;
   font-family: ${(props) => props.theme.font.family.headlinetext};
-  font-size: ${(props) => props.theme.font.size.headlinetext};
+  font-size: ${(props) => props.theme.font.size.headline};
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
   text-align: ${(props) => props.theme.font.size.center};
+  color: ${(props) => props.theme.color.dark};
+`;
+export const ErrorMessage = styled.article`
+margin-top: 50px;
+  text-align: ${(props) => props.theme.font.size.center};
+  font-size: ${(props) => props.theme.font.size.headlinetext};
   color: ${(props) => props.theme.color.dark};
 `;

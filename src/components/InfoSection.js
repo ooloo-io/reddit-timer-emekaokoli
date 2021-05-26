@@ -2,11 +2,14 @@ import React from 'react';
 import {
   Container,
   H4,
-  Li, Links,
-  Main, Paragraph,
+  Li,
+  Links,
+  Main,
+  Paragraph,
   Section,
   // eslint-disable-next-line comma-dangle
-  Ul, WrapSection
+  Ul,
+  WrapSection
 } from './common/infosection/infoSection.style';
 
 export default function InfoSection() {
