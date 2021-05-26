@@ -6,18 +6,25 @@ import {
   AppContainer,
   AppMain,
   Button,
+  ErrorMessage,
   H1,
+
   // eslint-disable-next-line comma-dangle
   Input
 } from './common/SubRedditForm/SubRedditForm.style';
+import Heatmap from './Heatmap';
 import { Loading } from './Loading';
 
 export default function SubRedditForm({ history, match }) {
+  const MAX_PAGE_NUMBER = 500;
+  const INIT_PAGE_NUMBER = 100;
   const { subreddit } = match.params;
 
-  const [input, setInput] = useState(() => subreddit);
-  const [loading, setLoading] = useState(() => false);
-  const [display, setDisplay] = useState(() => []);
+  const [input, setInput] = useState(subreddit);
+  const [loading, setLoading] = useState(false);
+  const [postResult, setPostsResult] = useState([]);
+  const [postError, setPostError] = useState(null);
+  const [postPerDay, setPostPerDay] = useState([]);
 
   const handleInputChange = (e) => {
     e.persist();
@@ -40,8 +47,35 @@ export default function SubRedditForm({ history, match }) {
 
   function axiosGet(sreddit, after) {
     return axios.get(
-      `https://www.reddit.com/r/${sreddit}/top.json?t=year&limit=100${after ? `&after=${after}` : ''}`
+      `https://www.reddit.com/r/${sreddit}/top.json?t=year&limit=${INIT_PAGE_NUMBER}${
+        after ? `&after=${after}` : ''
+      }`,
     );
+  }
+
+  async function groupPostsPerDayAndHour(posts) {
+    const postsPerDay = Array(7)
+      .fill()
+      .map(() => Array(24)
+        .fill()
+        .map(() => []),);
+
+    posts.forEach((post) => {
+      const createdAtDate = new Date(post.data.created_utc * 1000);
+      const dayOfWeek = createdAtDate.getDay();
+      const hour = createdAtDate.getHours();
+
+      postsPerDay[dayOfWeek][hour].push({
+        createdAt: createdAtDate,
+        title: post.data.title,
+        url: `https://reddit.com${post.data.permalink}`,
+        score: post.data.score,
+        numComments: post.data.num_comments,
+        author: post.data.author,
+      });
+    });
+
+    return { postsPerDay };
   }
 
   // load data area
@@ -53,25 +87,22 @@ export default function SubRedditForm({ history, match }) {
         let dataStore = [];
         for (let i = 0; i < 5; i += 1) {
           // eslint-disable-next-line no-await-in-loop
-          const results = await axiosGet(subreddit, after);
+          const posts = await axiosGet(subreddit, after);
 
-          dataStore = [...dataStore, ...results.data.data.children];
-          after = results.data.data.after;
+          dataStore = [...dataStore, ...posts.data.data.children];
+          after = posts.data.data.after;
         }
-
-        return dataStore;
+        const response = groupPostsPerDayAndHour(dataStore);
+        setPostPerDay(response);
+        return response;
       };
       try {
-        // fetchAllResults().then((data) => setFullData(() => data));
-        const response = await fetchAllResults();
-        setDisplay(() => response);
+        const posts = await fetchAllResults();
+        setPostsResult(() => posts.postsPerDay);
         setLoading(() => false);
-      } catch (e) {
-        // eslint-disable-next-line no-console
-        console.error(`An error has occured ${e}`);
+      } catch (err) {
+        setPostError(() => err.message);
       }
-
-      return display;
     }
     fetchData();
     // clean up after
@@ -79,8 +110,19 @@ export default function SubRedditForm({ history, match }) {
       setLoading(() => false);
       fetchData();
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [subreddit]);
+
+  function ErrorMess() {
+    return (
+      <ErrorMessage>
+        Oops,
+        {' '}
+        {postError}
+      </ErrorMessage>
+    );
+  }
+  const postData = postResult.map((post, i) => post[i][i]);
+  // const postsPerDay = postPerDay.map((el, index) => el);
   return (
     <AppContainer>
       <H1>Find the best time for a subreddit</H1>
@@ -94,13 +136,29 @@ export default function SubRedditForm({ history, match }) {
             onChange={handleInputChange}
             value={input}
           />
-          <Button type="submit">Search</Button>
+          <Button>Search</Button>
         </form>
-        Total posts:
         {'  '}
-        {loading === false
-          ? display.length
-          : <Loading /> || 'No data to display! '}
+
+        {
+          // eslint-disable-next-line no-nested-ternary
+          // loading === false ? (
+          //   <Heatmap postResult={postResult} />
+          // ) : <Loading /> ? (
+          //   postError
+          // ) : (
+          //   <ErrorMess /> : 'Error'
+          // )
+          (() => {
+            if (postError) {
+              return <ErrorMess />;
+            }
+            if (loading === false) {
+              return <Heatmap postResult={postData} postsPerDay={postPerDay} />;
+            }
+            return <Loading />;
+          })()
+        }
       </AppMain>
     </AppContainer>
   );

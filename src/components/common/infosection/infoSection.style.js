@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Div = styled.div``;
 const section = styled.article``;
 export const Main = styled(Div)`
-  min-height: ${(props) => props.theme.size.halfHeight};
+  min-height: ${(props) => props.theme.color.heatmap.size.halfHeight};
   width: ${(props) => props.theme.font.size.vmin};
   align-content: ${(props) => props.theme.font.size.center};
   margin: ${(props) => props.theme.font.size.marginCenter};
@@ -24,7 +24,7 @@ export const Section = styled(section)`
   padding: ${(props) => props.theme.font.size.large};
 `;
 export const WrapSection = styled(section)`
-  //height: ${(props) => props.theme.size.halfHeight};
+  //height: ${(props) => props.theme.color.heatmap.size.heatmap.halfHeight};
 `;
 export const Links = styled(Link)`
   color: ${(props) => props.theme.color.link};

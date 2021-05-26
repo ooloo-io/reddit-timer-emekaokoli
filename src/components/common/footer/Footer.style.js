@@ -5,7 +5,7 @@ import { ReactComponent as UnstyledLogo } from '../../images/elements-sign.svg';
 export const Container = styled.footer`
   width: 100%;
   max-width: 980px;
-  height: ${(props) => props.theme.size.footerHeight || '100px'};
+  height: ${(props) => props.theme.color.heatmap.size.heatmap.footerHeight || '100px'};
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
